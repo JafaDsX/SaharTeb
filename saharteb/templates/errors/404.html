@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - الصفحة غير موجودة</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "errors/errors.css" %}">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 404 Icon -->
+        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5,14h-0.79l-0.28-0.27C15.41,12.59,16,11.11,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5S5.91,16,9.5,16 c1.61,0,3.09-0.59,4.23-1.57L14,14.71v0.79l5,4.99L20.49,19L15.5,14z M9.5,14C7.01,14,5,11.99,5,9.5S7.01,5,9.5,5S14,7.01,14,9.5 S11.99,14,9.5,14z"/>
+            <path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z" fill-opacity="0.5"/> <!-- Small plus/detail -->
+        </svg>
+
+        <div class="error-code">404</div>
+        <h1>عذراً، الصفحة غير موجودة</h1>
+
+        <p>
+            يبدو أنك قد ضللت الطريق. الرابط الذي تحاول الوصول إليه قد يكون محذوفاً أو تم تغيير عنوانه.
+        </p>
+
+        <a href="/" class="btn">
+            العودة للرئيسية
+        </a>
+    </div>
+
+</body>
+</html>

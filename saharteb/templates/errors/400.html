@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - طلب غير صالح</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "errors/errors.css" %}">
+</head>
+<body>
+
+        <div class="container">
+        <!-- 400 Icon (Warning) -->
+        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12,2L1,21h22L12,2z M13,18h-2v-2h2V18z M13,14h-2V8h2V14z"/>
+        </svg>
+
+        <div class="error-code">400</div>
+        <h1>طلب غير صالح</h1>
+
+        <p>
+            لا يمكن لخوادمنا معالجة طلبك بسبب خطأ في الرابط أو البيانات المرسلة. يرجى التأكد من الرابط والمحاولة مجدداً.
+        </p>
+
+        <a href="/" class="btn">
+            العودة للرئيسية
+        </a>
+    </div>
+
+
+</body>
+</html>
