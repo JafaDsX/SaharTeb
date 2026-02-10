@@ -1,5 +1,6 @@
+from pyexpat.errors import messages
 from django.contrib import admin
-from service.models import Category, Service, ServiceProvider, ServiceProviderOption
+from service.models import Category, Service, ServiceProvider, ServiceProviderOption, ServiceRequest
 from django.contrib.admin import register, TabularInline, ModelAdmin
 
 
@@ -31,3 +32,15 @@ class ServiceProviderAdmin(ModelAdmin):
     ordering = ('-created_at',)
 
 
+
+@admin.register(ServiceRequest)
+class ServiceRequestAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'phone',
+        'service',
+        'requested_date',
+        'created_at',
+    )
+    ordering = ('-created_at',)
+    readonly_fields = ('created_at',)

@@ -1,0 +1,137 @@
+{% load static %}
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    {% block title %}سحر طب{% endblock %}
+    <link rel="stylesheet" href="{% static "core/css/bootstrap.rtl.min.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+    {% comment %} <link rel="stylesheet" href="{% static "core/css/aos.css" %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static "core/css/base.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/home.css" %}">
+
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
+
+    {# ------------  Navbar ------------ #}
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-glass fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                <span class="brand-mark">
+                    <i class="fa-solid fa-heart-pulse " style="color: #50bbf0 !important"></i>
+                </span>
+                <span class="fw-bold text-white">سحر طب</span>
+            </a>
+
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">الخدمات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#journey">رحلة IVF</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#doctors">الأطباء</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">قصص النجاح</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">مقالات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
+                </ul>
+
+                <div class="d-flex gap-2 align-items-center">
+                    <button class="btn btn-icon" id="themeToggle" type="button" aria-label="Toggle theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <a class="btn btn-primary btn-pulse" href="#appointment">
+                        <i class="fa-solid fa-calendar-check ms-1"></i>
+                        احجزي استشارة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock content %}
+
+    {# ------------  Footer ------------ #}
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="brand-mark"><i class="fa-solid fa-heart-pulse" ></i></span>
+                        <span class="fw-bold fs-5">سحر طب</span>
+                    </div>
+                    <p class="text-muted mb-3">
+                        تجربة علاجية راقية — خصوصية، دعم، وتقنيات حديثة في IVF والنساء والولادة.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-icon" href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="btn btn-icon" href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a class="btn btn-icon" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">روابط</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#journey">رحلة IVF</a></li>
+                        <li><a href="#doctors">الأطباء</a></li>
+                        <li><a href="#appointment">حجز</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3">معلومات</h6>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h6 class="fw-bold mb-3">اشتركي بالنشرة</h6>
+                    <div class="input-group">
+                        <input class="form-control" placeholder="بريدك الإلكتروني">
+                        <button class="btn btn-primary" type="button">اشتراك</button>
+                    </div>
+                    <div class="text-muted small mt-2">لن نرسل رسائل مزعجة.</div>
+                </div>
+            </div>
+
+            <hr class="my-4 opacity-25">
+            <div class="d-flex flex-column flex-md-row justify-content-between gap-2 text-muted small">
+                <div>© <span id="year"></span> سحرطب — جميع الحقوق محفوظة</div>
+                <div>Made with Bootstrap + jQuery</div>
+            </div>
+        </div>
+    </footer>
+
+    {# ------------  Scripts ------------ #}
+    <script src="{% static "core/js/jquery.min.js" %}"></script>
+    <script src="{% static "core/js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "core/js/gsap.min.js" %}"></script>
+
+    {% comment %} <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> {% endcomment %}
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> {% endcomment %}
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> {% endcomment %}
+
+
+    {# Extra Scripts #}
+    {% block extra_scripts %}{% endblock extra_scripts %}
+
+</body>
+
+</html>

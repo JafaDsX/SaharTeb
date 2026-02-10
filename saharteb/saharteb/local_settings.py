@@ -1,5 +1,5 @@
 SECRET_KEY = 'django-insecure-9p8^hx5$q21x-=jwu)ie6e&kc=i_=7^+!@ar3c^03$8wo98@)&'
-DEBUG = False
+DEBUG = True
 
 
 DB_NAME='mydb'

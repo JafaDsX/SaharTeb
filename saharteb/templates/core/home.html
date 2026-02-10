@@ -1,1 +1,711 @@
-Home
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}سحر طب{% endblock title %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static "core/css/home.css" %}">
+{% endblock extra_head %}
+
+{% block content %}
+    <!-- Top progress bar -->
+    <div id="scrollProgress"></div>
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+        <div class="hero-bg">
+            <div class="blob b1"></div>
+            <div class="blob b2"></div>
+            <div class="blob b3"></div>
+            <div class="grid-glow"></div>
+            <canvas id="particles"></canvas>
+        </div>
+
+        <div class="container hero-content">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <div class="badge-soft mb-3" data-aos="fade-up">
+                        <i class="fa-solid fa-shield-heart ms-1"></i>
+                        رعاية طبية متكاملة • خصوصية عالية • فريقك الصحي الموثوق
+                    </div>
+
+                    <h1 class="display-5 fw-800 mb-3" data-aos="fade-up" data-aos-delay="80">
+                    صحتك تبدأ هنا… مع <span class="text-gradient">سحرطب</span>
+                    </h1>
+
+                    <p class="lead hero-lead mb-4" data-aos="fade-up" data-aos-delay="140">
+                    سحرطب فريق طبي متكامل يقدّم خدمات علاجية وتشخيصية شاملة في مجال صحة المرأة، الحمل والولادة، الخصوبة، التحاليل الطبية، والتصوير الطبي.
+                    </p>
+                    <p class="lead hero-lead mb-4" data-aos="fade-up" data-aos-delay="140">
+                        نرافقك في كل مرحلة بخبرة طبية، دعم إنساني، وتقنيات حديثة — لأن صحتك تستحق الاهتمام الحقيقي.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="220">
+                        <a class="btn btn-primary btn-lg" href="#appointment">
+                            ابدئي رحلتك
+                            <i class="fa-solid fa-arrow-left-long me-2"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-lg" href="#services">
+                            استكشفي الخدمات
+                        </a>
+                    </div>
+
+                    <div class="hero-trust mt-4" data-aos="fade-up" data-aos-delay="280">
+                        <div class="trust-item">
+                            <div class="trust-icon"><i class="fa-solid fa-award"></i></div>
+                            <div>
+                                <div class="fw-semibold">فريق طبي متعدد التخصصات</div>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                            <div>
+                                <div class="fw-semibold">متابعة دقيقة ومستمرة</div>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-icon"><i class="fa-solid fa-lock"></i></div>
+                            <div>
+                                <div class="fw-semibold">خصوصية تامة واهتمام فردي</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="hero-card" data-aos="zoom-in" data-aos-delay="120">
+                        <div class="hero-card-top">
+                            <div class="status-pill">
+                                <span class="dot"></span> متاح الآن — استشارة أولية
+                            </div>
+                            <div class="mini-actions">
+                                <a href='https://wa.me/989033817848?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%86%D8%A7%20%D8%B3%D8%AD%D8%B1%20%F0%9F%8C%B8.%20%D8%A3%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%AA%D9%83%D9%85%20%D9%84%D9%84%D8%A5%D8%AC%D8%A7%D8%A8%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%D8%A7%D8%AA%D9%83%D9%85%20%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC%D9%8A%D8%A9%20%D9%81%D9%8A%20%D8%A5%D9%8A%D8%B1%D8%A7%D9%86.' target='_blank' class="btn btn-icon btn-sm" type="button" data-bs-toggle="tooltip"
+                                    data-bs-title="واتساب">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a href='tel:00989033817848' target='_blank' class="btn btn-icon btn-sm" type="button" data-bs-toggle="tooltip"
+                                    data-bs-title="اتصال">
+                                    <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-visual">
+                            <div class="ring r1"></div>
+                            <div class="ring r2"></div>
+                            <div class="ring r3"></div>
+
+                            <img class="hero-img"
+                                src="{% static "core/img/doctors.jpg" %}"
+                                alt="Teb Sahar" />
+
+                            <div class="floating-card fc1">
+                                <div class="fc-icon"><i class="fa-solid fa-baby"></i></div>
+                                <div>
+                                    <div class="fw-semibold">برامج IVF/ICSI</div>
+                                    <div class="small text-muted">خطط علاج شخصية</div>
+                                </div>
+                            </div>
+
+                            <div class="floating-card fc2">
+                                <div class="fc-icon"><i class="fa-solid fa-microscope"></i></div>
+                                <div>
+                                    <div class="fw-semibold">مختبر جنيني</div>
+                                    <div class="small text-muted">تقنيات دقيقة</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hero-card-bottom">
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <div class="metric">
+                                        <div class="metric-val"><span class="counter" data-target="5000">0</span>+</div>
+                                        <div class="metric-lbl">حالات متابعة</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="metric">
+                                        <div class="metric-val"><span class="counter" data-target="92">0</span>%</div>
+                                        <div class="metric-lbl">رضا المراجعين</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-soft w-100 mt-3" href="#appointment">
+                                احجزي موعداً خلال 60 ثانية
+                                <i class="fa-solid fa-sparkles me-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-note text-center mt-3 text-muted small" data-aos="fade-up" data-aos-delay="260">
+                        *المحتوى تعريفي ولا يغني عن الاستشارة الطبية المباشرة.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wave">
+            <svg viewBox="0 0 1440 140" preserveAspectRatio="none">
+                <path
+                    d="M0,96L80,90.7C160,85,320,75,480,69.3C640,64,800,64,960,69.3C1120,75,1280,85,1360,90.7L1440,96L1440,140L1360,140C1280,140,1120,140,960,140C800,140,640,140,480,140C320,140,160,140,80,140L0,140Z">
+                </path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- SERVICES -->
+    <section id="services" class="section-pad">
+        <div class="container">
+            <div class="section-head text-center mb-4">
+                <h2 class="fw-800" data-aos="fade-up">خدماتنا المتخصصة</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="80">
+                    كل شيء في مكان واحد — من التشخيص إلى المتابعة والدعم.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- card -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="glass-card service-card h-100">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-egg"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3">متابعة الحمل والولادة</h5>
+                        <p class="text-muted">
+                        رعاية طبية متكاملة للأم والجنين من بداية الحمل حتى الولادة.
+                        </p>
+                        <div class="chips">
+                            <span class="chip">PregnancyCare</span><span class="chip">PrenatalCare</span><span class="chip">Childbirth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="glass-card service-card h-100">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-person-pregnant"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3">الخصوبة وعلاجات الإنجاب</h5>
+                        <p class="text-muted">
+                        تشخيص وعلاج تأخر الحمل وزراعة الأجنة بأحدث الأساليب الطبية.
+                        </p>
+                        <div class="chips">
+                            <span class="chip">Fertility</span><span class="chip">IVF</span><span
+                                class="chip">EmbryoTransfer</span><span class="chip">ReproductiveHealth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
+                    <div class="glass-card service-card h-100">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3"> التصوير الطبي (سونار)</h5>
+                        <p class="text-muted">
+                            فحوصات سونار دقيقة لتشخيص ومتابعة الحالات النسائية والحمل.
+
+                        </p>
+                        <div class="chips">
+                            <span class="chip">Ultrasound</span><span class="chip">MedicalImaging</span><span
+                                class="chip">DiagnosticImaging</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <div class="glass-card service-card h-100">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-vial-circle-check"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3">التحاليل الطبية</h5>
+                        <p class="text-muted">
+                            تحاليل مخبرية شاملة ودقيقة لدعم التشخيص والمتابعة العلاجية.
+
+                        </p>
+                        <div class="chips">
+                            <span class="chip">LaboratoryTests</span><span class="chip">MedicalLab</span><span class="chip">BloodTest</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="glass-card service-card h-100">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3"> الرعاية الصحية الشاملة</h5>
+                        <p class="text-muted">
+                                خدمات طبية متكاملة بخطط علاجية مخصصة لكل مريضة.
+
+                        </p>
+                        <div class="chips">
+                            <span class="chip">Healthcare</span><span class="chip">MedicalCare</span><span
+                                class="chip">PatientCare</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
+                    <div class="glass-card service-card h-100">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-heart-circle-plus"></i>
+                        </div>
+                        <h5 class="fw-bold mt-3">التجميل الطبي النسائي</h5>
+                        <p class="text-muted">
+                                علاجات تجميلية آمنة لتحسين الصحة والمظهر النسائي.
+
+                        </p>
+                        <div class="chips">
+                            <span class="chip">MedicalAesthetics</span><span class="chip">WomenAesthetics</span><span
+                                class="chip">CosmeticCare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-row mt-5" data-aos="fade-up">
+                <div
+                    class="glass-card p-4 d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+                    <div>
+                        <h5 class="fw-800 mb-1">هل تريدين خطة علاج واضحة؟</h5>
+                        <p class="text-muted mb-0">أرسلي بياناتك وسنتواصل خلال ساعات العمل.</p>
+                    </div>
+                    <a href="#appointment" class="btn btn-primary btn-lg">
+                        احجزي الآن <i class="fa-solid fa-arrow-left-long me-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section id="journey" class="section-pad section-soft">
+        <div class="container">
+            <div class="section-head text-center mb-5">
+                <h2 class="fw-800" data-aos="fade-up">
+                    كيف نرافقك في رحلتك الصحية؟
+                </h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="80">
+                    خطوات واضحة — دعم مستمر — فريق واحد إلى جانبك.
+                </p>
+            </div>
+
+            <div class="timeline">
+                <div class="t-item" data-aos="fade-up">
+                    <div class="t-dot"><i class="fa-solid fa-comments"></i></div>
+                    <div class="t-card">
+                        <h5 class="fw-bold mb-1">1) التواصل الأولي</h5>
+                        <p class="text-muted mb-0">
+                            نستمع لحالتك، أسئلتك، وتوقعاتك لفهم احتياجاتك بدقة.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="t-item" data-aos="fade-up" data-aos-delay="80">
+                    <div class="t-dot"><i class="fa-solid fa-file-medical"></i></div>
+                    <div class="t-card">
+                        <h5 class="fw-bold mb-1">2) التقييم الطبي</h5>
+                        <p class="text-muted mb-0">
+                            مراجعة الفحوصات والتقارير الطبية مع الفريق المختص.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="t-item" data-aos="fade-up" data-aos-delay="140">
+                    <div class="t-dot"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="t-card">
+                        <h5 class="fw-bold mb-1">3) وضع الخطة العلاجية</h5>
+                        <p class="text-muted mb-0">
+                            تصميم خطة مخصصة تناسب حالتك الصحية وأهدافك.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="t-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="t-dot"><i class="fa-solid fa-user-doctor"></i></div>
+                    <div class="t-card">
+                        <h5 class="fw-bold mb-1">4) المتابعة والدعم</h5>
+                        <p class="text-muted mb-0">
+                            متابعة مستمرة، تنسيق المواعيد، ودعم طبي وإنساني.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="t-item" data-aos="fade-up" data-aos-delay="260">
+                    <div class="t-dot"><i class="fa-solid fa-heart"></i></div>
+                    <div class="t-card">
+                        <h5 class="fw-bold mb-1">5) الرعاية المستمرة</h5>
+                        <p class="text-muted mb-0">
+                            نبقى معك حتى بعد انتهاء العلاج لضمان راحة وطمأنينة دائمة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DOCTORS -->
+    <section id="doctors" class="section-pad">
+        <div class="container">
+            <div class="section-head text-center mb-5">
+                <h2 class="fw-800" data-aos="fade-up">أطباؤنا</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="80">
+                    خبرات قوية + تعامل إنساني.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                    <div class="doctor-card glass-card p-3 h-100">
+                        <img class="doc-img"
+                            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
+                            alt="Doctor">
+                        <div class="pt-3">
+                            <h6 class="fw-bold mb-1">د. سارة أحمد</h6>
+                            <div class="text-muted small mb-2">استشارية نساء وولادة</div>
+                            <div class="d-flex gap-2">
+                                <span class="pill">15+ سنة</span>
+                                <span class="pill">IVF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="80">
+                    <div class="doctor-card glass-card p-3 h-100">
+                        <img class="doc-img"
+                            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+                            alt="Doctor">
+                        <div class="pt-3">
+                            <h6 class="fw-bold mb-1">د. محمد الخالد</h6>
+                            <div class="text-muted small mb-2">أخصائي أجنة ومختبر</div>
+                            <div class="d-flex gap-2">
+                                <span class="pill">Embryology</span>
+                                <span class="pill">Lab</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="140">
+                    <div class="doctor-card glass-card p-3 h-100">
+                        <img class="doc-img"
+                            src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
+                            alt="Doctor">
+                        <div class="pt-3">
+                            <h6 class="fw-bold mb-1">د. عمر السعدي</h6>
+                            <div class="text-muted small mb-2">عقم وتأخر إنجاب</div>
+                            <div class="d-flex gap-2">
+                                <span class="pill">Plan</span>
+                                <span class="pill">Follow-up</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="doctor-card glass-card p-3 h-100">
+                        <img class="doc-img"
+                            src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80"
+                            alt="Doctor">
+                        <div class="pt-3">
+                            <h6 class="fw-bold mb-1">د. لينا فارس</h6>
+                            <div class="text-muted small mb-2">هرمونات وخصوبة</div>
+                            <div class="d-flex gap-2">
+                                <span class="pill">AMH</span>
+                                <span class="pill">Hormones</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATS -->
+            <div class="row g-3 mt-5">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="glass-card p-4 stat-card">
+                        <div class="stat-ico"><i class="fa-solid fa-people-group"></i></div>
+                        <div class="stat-val"><span class="counter" data-target="12000">0</span>+</div>
+                        <div class="text-muted">مراجعين</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="glass-card p-4 stat-card">
+                        <div class="stat-ico"><i class="fa-solid fa-baby"></i></div>
+                        <div class="stat-val"><span class="counter" data-target="3200">0</span>+</div>
+                        <div class="text-muted">رحلات IVF</div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="140">
+                    <div class="glass-card p-4 stat-card">
+                        <div class="stat-ico"><i class="fa-solid fa-star"></i></div>
+                        <div class="stat-val"><span class="counter" data-target="4">0</span>.<span class="counter"
+                                data-target="9">0</span>/5</div>
+                        <div class="text-muted">تقييم</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section-pad section-soft">
+        <div class="container">
+            <div class="section-head text-center mb-5">
+                <h2 class="fw-800" data-aos="fade-up">قصص نجاح</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="80">تجارب حقيقية (نماذج نصية قابلة للاستبدال).
+                </p>
+            </div>
+
+            <div id="tCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000"
+                data-aos="fade-up">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="glass-card p-4 p-lg-5">
+                            <div class="stars mb-2">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="mb-3 fs-5">
+                                “تعامل راقٍ، متابعة دقيقة، وراحة نفسية طوال رحلة IVF. شكراً سحر طب.”
+                            </p>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar">أ</div>
+                                <div>
+                                    <div class="fw-bold">أمينة</div>
+                                    <div class="text-muted small">رحلة IVF</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="glass-card p-4 p-lg-5">
+                            <div class="stars mb-2">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="mb-3 fs-5">
+                                “وضوح في الخطة، اهتمام بالتفاصيل، وفريق مختبر ممتاز.”
+                            </p>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar">س</div>
+                                <div>
+                                    <div class="fw-bold">سارة</div>
+                                    <div class="text-muted small">متابعة خصوبة</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="glass-card p-4 p-lg-5">
+                            <div class="stars mb-2">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="mb-3 fs-5">
+                                “أجمل ما في المكان هو الهدوء والخصوصية… حسّيت بالأمان.”
+                            </p>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="avatar">م</div>
+                                <div>
+                                    <div class="fw-bold">مريم</div>
+                                    <div class="text-muted small">نساء وولادة</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#tCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">السابق</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#tCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">التالي</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section-pad">
+        <div class="container">
+            <div class="section-head text-center mb-5">
+                <h2 class="fw-800" data-aos="fade-up">مقالات ونصائح</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="80">محتوى تثقيفي بسيط (استبدليه لاحقاً
+                    بمقالاتك).</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <article class="glass-card blog-card h-100">
+                        <div class="blog-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80')">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="chip">IVF</span><span class="chip">Basics</span>
+                            </div>
+                            <h5 class="fw-bold">ما الفرق بين IVF و ICSI؟</h5>
+                            <p class="text-muted mb-0">شرح مبسط يساعدك على فهم الخيارات المتاحة.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <article class="glass-card blog-card h-100">
+                        <div class="blog-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1582719478185-2c3cfc6a1d22?auto=format&fit=crop&w=1200&q=80')">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="chip">Hormones</span><span class="chip">AMH</span>
+                            </div>
+                            <h5 class="fw-bold">تحليل AMH: ماذا يعني؟</h5>
+                            <p class="text-muted mb-0">كيف يساهم في تقييم مخزون المبيض وخطة العلاج.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
+                    <article class="glass-card blog-card h-100">
+                        <div class="blog-img"
+                            style="background-image:url('https://images.unsplash.com/photo-1580281658223-9b93f18ae9ae?auto=format&fit=crop&w=1200&q=80')">
+                        </div>
+                        <div class="p-4">
+                            <div class="d-flex gap-2 mb-2">
+                                <span class="chip">Pregnancy</span><span class="chip">Care</span>
+                            </div>
+                            <h5 class="fw-bold">نصائح الثلث الأول من الحمل</h5>
+                            <p class="text-muted mb-0">متى نراجع الطبيبة؟ وما أهم الفحوصات؟</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPOINTMENT / CONTACT -->
+    <section id="appointment" class="section-pad section-cta">
+        <div class="container">
+            <div class="glass-card p-4 p-lg-5">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <h2 class="fw-800 mb-2">احجزي استشارة الآن</h2>
+                        <p class="text-muted mb-4">
+                            اتركي بياناتك وسنقوم بالتواصل لتأكيد الموعد. (نموذج تجريبي)
+                        </p>
+
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a class="btn btn-dark btn-lg" href='tel:00989033817848'>
+                                <i class="fa-solid fa-location-dot ms-1"></i> معلومات التواصل
+                            </a>
+                            <a class="btn btn-success btn-lg" href="https://wa.me/989033817848?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%86%D8%A7%20%D8%B3%D8%AD%D8%B1%20%F0%9F%8C%B8.%20%D8%A3%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%AA%D9%83%D9%85%20%D9%84%D9%84%D8%A5%D8%AC%D8%A7%D8%A8%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%D8%A7%D8%AA%D9%83%D9%85%20%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC%D9%8A%D8%A9%20%D9%81%D9%8A%20%D8%A5%D9%8A%D8%B1%D8%A7%D9%86." target="_blank"
+                                rel="noopener">
+                                <i class="fa-brands fa-whatsapp ms-1"></i> واتساب
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="80">
+                        <form id="appointmentForm" class="form-modern" method='post' action="{% url 'service-request' %}">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">الاسم الكامل</label>
+                                    {{ service_request_form.name }}
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">رقم الهاتف</label>
+                                    {{ service_request_form.phone }}
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">الخدمة</label>
+                                    {{ service_request_form.service }}
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">الوقت المفضل</label>
+                                    {{ service_request_form.requested_date }}
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">ملاحظات</label>
+                                    {{ form.description }}
+                                </div>
+                                <div class="col-12">
+                                    <button  id='submit-form' class="btn btn-primary btn-lg w-100" type="submit">
+                                        إرسال الطلب
+                                        <i class="fa-solid fa-paper-plane me-2"></i>
+                                    </button>
+                                    <div id="formToast" class="mini-toast mt-3 d-none"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACT STRIP -->
+            <div id="contact" class="row g-3 mt-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="glass-card p-4 h-100">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="contact-ico"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <div class="fw-bold">الهاتف</div>
+                                <div class="text-muted" style="direction: ltr;">+98 903 381 7848 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="glass-card p-4 h-100">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="contact-ico"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <div class="fw-bold">البريد</div>
+                                <div class="text-muted">info@saharteb.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="140">
+                    <div class="glass-card p-4 h-100">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="contact-ico"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <div class="fw-bold">العنوان</div>
+                                <div class="text-muted">ایران - مشهد</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Back to top -->
+    <button id="toTop" class="to-top" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+{% endblock content  %}
+
+{% block extra_scripts %}
+    <script>
+        jQuery('document').ready(function(){
+            jQuery("#appointmentForm").click(function(){
+
+            })
+        })
+    </script>
+    <script src="{% static "core/js/home.js" %}"></script>
+{% endblock extra_scripts  %}

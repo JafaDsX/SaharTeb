@@ -47,7 +47,6 @@ class ServiceProvider(models.Model):
     service = models.ForeignKey(Service, on_delete=models.PROTECT, related_name='providers', verbose_name='سرویس')
     is_active = models.BooleanField(default=False, verbose_name='فعال بودن')
 
-
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='تاریخ بروزرسانی')
 
@@ -74,3 +73,24 @@ class ServiceProviderOption(models.Model):
         verbose_name_plural='گزینه های فراهم کنندگان سرویس'
 
 
+class ServiceRequest(models.Model):
+    name = models.CharField(max_length=150, null=True, blank=True, verbose_name="نام")
+    phone = models.CharField(max_length=30, null=True, blank=True, verbose_name="شماره تماس")
+    service = models.CharField(max_length=50, null=True, blank=True, verbose_name="خدمت درخواستی")
+    description = models.TextField(max_length=100, blank=True, verbose_name="توضیحات")
+    doctor = models.CharField(max_length=100, blank=True, verbose_name="پزشک")
+    translator = models.CharField(max_length=100, null=True, blank=True, verbose_name="مترجم")
+    requested_date = models.DateField(
+        verbose_name="تاریخ مورد نظر"
+    )
+
+    # ✅ تاریخ ثبت خودکار درخواست
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="تاریخ ثبت"
+    )
+
+
+    class Meta:
+        verbose_name = 'درخواست سرویس'
+        verbose_name_plural = 'درخواست های سرویس'
