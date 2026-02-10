@@ -75,15 +75,15 @@ WSGI_APPLICATION = 'saharteb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydb.db'
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'mydb.db'
 
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': DB_NAME,
-        # "USER": DB_USER,
-        # "PASSWORD": PASSWORD,
-        # "HOST": HOST,
-        # "PORT": PORT
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_NAME,
+        "USER": DB_USER,
+        "PASSWORD": PASSWORD,
+        "HOST": HOST,
+        "PORT": PORT
     }
 }
 
