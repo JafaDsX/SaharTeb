@@ -5,63 +5,12 @@
 
 {% block extra_head %}
     <link rel="stylesheet" href="{% static "core/css/fonts.css" %}">
-    <link rel="stylesheet" href="{% static "core/css/home.min.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/home.css" %}">
 
     <style>
-        @media  (max-width: 991px) {
-            .hero-content h1{
-                    font-size: 26px;
-                    text-align: center !important;
-                    padding: 10px 0 !important;
-                }
-            }
 
 
-            body, h1, h2, h3, h4, h5, h6, p, span, div, a {
-                font-family: 'Kalameh', sans-serif !important;
-        }
-
-        @media  (max-width: 487px){
-            .badge-soft{
-                text-shadow: none !important;
-                font-size: 12px !important;
-                text-align: center !important;
-            }
-            .hero-content h1{
-                text-align: center;
-                padding: 50px 0;
-            }
-            .lead{
-                font-size: 20px !important;
-                text-align: center;
-            }
-            .header-btn{
-                flex-wrap: nowrap !important;
-            }
-            .header-btn{
-                font-size: 13px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .counter{
-                font-size: 12px
-            }
-            .hero-card-bottom{
-                display: flex;
-                flex-direction: column;
-            }
-            .hero-card-bottom .metric{
-                width: 152px;
-            }
-            .hero-note{
-                padding-bottom: 58px !important;
-            }
-            }
-            .hero-trust{
-                margin-top:50px !important;
-            }
-    </style>
+        </style>
 {% endblock extra_head %}
 
 {% block content %}
@@ -420,7 +369,7 @@
                 <div class="col-md-6 col-lg-3" data-aos="zoom-in">
                     <div class="doctor-card glass-card p-3 h-100">
                         <img class="doc-img"
-                            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
+                            src=""
                             alt="Doctor">
                         <div class="pt-3">
                             <h6 class="fw-bold mb-1">د. سارة أحمد</h6>
@@ -436,7 +385,7 @@
                 <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="80">
                     <div class="doctor-card glass-card p-3 h-100">
                         <img class="doc-img"
-                            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+                            src=""
                             alt="Doctor">
                         <div class="pt-3">
                             <h6 class="fw-bold mb-1">د. محمد الخالد</h6>
@@ -452,7 +401,7 @@
                 <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="140">
                     <div class="doctor-card glass-card p-3 h-100">
                         <img class="doc-img"
-                            src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
+                            src=""
                             alt="Doctor">
                         <div class="pt-3">
                             <h6 class="fw-bold mb-1">د. عمر السعدي</h6>
@@ -468,7 +417,7 @@
                 <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
                     <div class="doctor-card glass-card p-3 h-100">
                         <img class="doc-img"
-                            src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80"
+                            src=""
                             alt="Doctor">
                         <div class="pt-3">
                             <h6 class="fw-bold mb-1">د. لينا فارس</h6>
@@ -608,7 +557,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <article class="glass-card blog-card h-100">
                         <div class="blog-img"
-                            style="background-image:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1200&q=80')">
+                            style="">
                         </div>
                         <div class="p-4">
                             <div class="d-flex gap-2 mb-2">
@@ -623,7 +572,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
                     <article class="glass-card blog-card h-100">
                         <div class="blog-img"
-                            style="background-image:url('https://images.unsplash.com/photo-1582719478185-2c3cfc6a1d22?auto=format&fit=crop&w=1200&q=80')">
+                            style="">
                         </div>
                         <div class="p-4">
                             <div class="d-flex gap-2 mb-2">
@@ -638,7 +587,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
                     <article class="glass-card blog-card h-100">
                         <div class="blog-img"
-                            style="background-image:url('https://images.unsplash.com/photo-1580281658223-9b93f18ae9ae?auto=format&fit=crop&w=1200&q=80')">
+                            style="">
                         </div>
                         <div class="p-4">
                             <div class="d-flex gap-2 mb-2">
@@ -761,6 +710,7 @@
     <script type="text/javascript">
         !function(){var i="ARAs5e",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
     </script>
+
     <script>
         jQuery('document').ready(function(){
             jQuery("#appointmentForm").click(function(){
