@@ -16,13 +16,14 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 from .local_settings import *
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 
 
-ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,15 +76,15 @@ WSGI_APPLICATION = 'saharteb.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': 'mydb.db'
-
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': DB_NAME,
         "USER": DB_USER,
         "PASSWORD": PASSWORD,
         "HOST": HOST,
-        "PORT": PORT
+        "PORT": PORT,
+        "OPTIONS": {
+            "charset": "utf8mb4",
+        },
     }
 }
 
@@ -138,5 +139,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 APP_DIRS = True
+DEFAULT_CHARSET = "utf-8"

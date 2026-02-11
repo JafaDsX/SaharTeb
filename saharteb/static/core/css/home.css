@@ -1,3 +1,5 @@
+@import url("./fonts.css");
+
 :root {
     --bg: #070A12;
     --card: rgba(255, 255, 255, .08);
@@ -18,7 +20,7 @@ body {
 }
 
 body {
-    font-family: "Cairo", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    font-family: 'Kalameh' !important;
     background: radial-gradient(1200px 700px at 70% 10%, rgba(124, 58, 237, .25), transparent 60%),
         radial-gradient(1000px 700px at 20% 0%, rgba(76, 201, 240, .22), transparent 55%),
         linear-gradient(180deg, #060712, #070A12 40%, #070A12);
@@ -261,6 +263,11 @@ a {
 @media (min-width: 992px) {
     .hero-trust {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .hero-content h1{
+        font-size: 25px !important;
+        padding: 14px 0 !important;
+        text-align: center !important;
     }
 }
 
@@ -825,4 +832,58 @@ option{
     background: #1b193d !important;
     color: white !important;
     box-shadow: none !important;
+}
+
+@media  (max-width: 991px) {
+    .hero-content h1{
+            font-size: 26px;
+            text-align: center !important;
+            padding: 10px 0 !important;
+        }
+    }
+
+
+    body, h1, h2, h3, h4, h5, h6, p, span, div, a {
+        font-family: 'Kalameh', sans-serif !important;
+}
+
+@media  (max-width: 487px){
+    .badge-soft{
+        text-shadow: none !important;
+        font-size: 12px !important;
+        text-align: center !important;
+    }
+    .hero-content h1{
+        text-align: center;
+        padding: 50px 0;
+    }
+    .lead{
+        font-size: 20px !important;
+        text-align: center;
+    }
+    .header-btn{
+        flex-wrap: nowrap !important;
+    }
+    .header-btn{
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .counter{
+        font-size: 12px
+    }
+    .hero-card-bottom{
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-card-bottom .metric{
+        width: 152px;
+    }
+    .hero-note{
+        padding-top: 40px
+    }
+    .hero-trust{
+        margin-top:50px !important;
+    }
 }

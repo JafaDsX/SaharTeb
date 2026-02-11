@@ -1,10 +1,67 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}سحر طب{% endblock title %}
+{% block title %}سحر طب | الرئيسية{% endblock title %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static "core/css/home.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/fonts.css" %}">
+    <link rel="stylesheet" href="{% static "core/css/home.min.css" %}">
+
+    <style>
+        @media  (max-width: 991px) {
+            .hero-content h1{
+                    font-size: 26px;
+                    text-align: center !important;
+                    padding: 10px 0 !important;
+                }
+            }
+
+
+            body, h1, h2, h3, h4, h5, h6, p, span, div, a {
+                font-family: 'Kalameh', sans-serif !important;
+        }
+
+        @media  (max-width: 487px){
+            .badge-soft{
+                text-shadow: none !important;
+                font-size: 12px !important;
+                text-align: center !important;
+            }
+            .hero-content h1{
+                text-align: center;
+                padding: 50px 0;
+            }
+            .lead{
+                font-size: 20px !important;
+                text-align: center;
+            }
+            .header-btn{
+                flex-wrap: nowrap !important;
+            }
+            .header-btn{
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .counter{
+                font-size: 12px
+            }
+            .hero-card-bottom{
+                display: flex;
+                flex-direction: column;
+            }
+            .hero-card-bottom .metric{
+                width: 152px;
+            }
+            .hero-note{
+                padding-bottom: 58px !important;
+            }
+            }
+            .hero-trust{
+                margin-top:50px !important;
+            }
+    </style>
 {% endblock extra_head %}
 
 {% block content %}
@@ -23,7 +80,7 @@
 
         <div class="container hero-content">
             <div class="row align-items-center g-4">
-                <div class="col-lg-6">
+                <div class="col-lg-6 ">
                     <div class="badge-soft mb-3" data-aos="fade-up">
                         <i class="fa-solid fa-shield-heart ms-1"></i>
                         رعاية طبية متكاملة • خصوصية عالية • فريقك الصحي الموثوق
@@ -33,24 +90,29 @@
                     صحتك تبدأ هنا… مع <span class="text-gradient">سحرطب</span>
                     </h1>
 
-                    <p class="lead hero-lead mb-4" data-aos="fade-up" data-aos-delay="140">
-                    سحرطب فريق طبي متكامل يقدّم خدمات علاجية وتشخيصية شاملة في مجال صحة المرأة، الحمل والولادة، الخصوبة، التحاليل الطبية، والتصوير الطبي.
+                    <p class="lead hero-lead mb-2" data-aos="fade-up" data-aos-delay="140">
+                        سحر طب، فریق طبی متکامل
+                    </p>
+                    <p class="lead hero-lead mb-2" data-aos="fade-up" data-aos-delay="140">
+                       یقدّم خدمات شامله بزراعة الکلى والأجنّه، التجمیل، زراعة الشعر والأسنان، وعلاج الخلایا الجذعیة لتجدید الحیاة.
                     </p>
                     <p class="lead hero-lead mb-4" data-aos="fade-up" data-aos-delay="140">
-                        نرافقك في كل مرحلة بخبرة طبية، دعم إنساني، وتقنيات حديثة — لأن صحتك تستحق الاهتمام الحقيقي.
+                      نهتمّ بصحتک بتقنیات حدیثة ورعایة
+
                     </p>
 
-                    <div class="d-flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="220">
-                        <a class="btn btn-primary btn-lg" href="#appointment">
-                            ابدئي رحلتك
+                    <div class="d-flex flex-wrap gap-2 header-btn mt-sm-4" data-aos="fade-up" data-aos-delay="220">
+                        <a class="header-btn btn btn-primary btn-lg" href="#appointment">
+                           ابدئی رحلتک مع سحرطب
+
                             <i class="fa-solid fa-arrow-left-long me-2"></i>
                         </a>
-                        <a class="btn btn-outline-light btn-lg" href="#services">
+                        <a class="header-btn btn btn-outline-light btn-lg" href="#services">
                             استكشفي الخدمات
                         </a>
                     </div>
 
-                    <div class="hero-trust mt-4" data-aos="fade-up" data-aos-delay="280">
+                    <div class="hero-trust " data-aos="fade-up" data-aos-delay="280">
                         <div class="trust-item">
                             <div class="trust-icon"><i class="fa-solid fa-award"></i></div>
                             <div>
@@ -72,18 +134,18 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 ">
                     <div class="hero-card" data-aos="zoom-in" data-aos-delay="120">
                         <div class="hero-card-top">
                             <div class="status-pill">
                                 <span class="dot"></span> متاح الآن — استشارة أولية
                             </div>
                             <div class="mini-actions">
-                                <a href='https://wa.me/989033817848?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%86%D8%A7%20%D8%B3%D8%AD%D8%B1%20%F0%9F%8C%B8.%20%D8%A3%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%AA%D9%83%D9%85%20%D9%84%D9%84%D8%A5%D8%AC%D8%A7%D8%A8%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%D8%A7%D8%AA%D9%83%D9%85%20%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC%D9%8A%D8%A9%20%D9%81%D9%8A%20%D8%A5%D9%8A%D8%B1%D8%A7%D9%86.' target='_blank' class="btn btn-icon btn-sm" type="button" data-bs-toggle="tooltip"
+                                <a style="background: rgba(16,185,129,.14)" href='https://wa.me/989033817848?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%86%D8%A7%20%D8%B3%D8%AD%D8%B1%20%F0%9F%8C%B8.%20%D8%A3%D9%86%D8%A7%20%D9%81%D9%8A%20%D8%AE%D8%AF%D9%85%D8%AA%D9%83%D9%85%20%D9%84%D9%84%D8%A5%D8%AC%D8%A7%D8%A8%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%D8%A7%D8%AA%D9%83%D9%85%20%D9%88%D8%AA%D9%82%D8%AF%D9%8A%D9%85%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC%D9%8A%D8%A9%20%D9%81%D9%8A%20%D8%A5%D9%8A%D8%B1%D8%A7%D9%86.' target='_blank' class="btn btn-icon btn-sm" type="button" data-bs-toggle="tooltip"
                                     data-bs-title="واتساب">
                                     <i class="fa-brands fa-whatsapp"></i>
                                 </a>
-                                <a href='tel:00989033817848' target='_blank' class="btn btn-icon btn-sm" type="button" data-bs-toggle="tooltip"
+                                <a style="background: rgba(16,185,129,.14)" href='tel:00989033817848' target='_blank' class="btn btn-icon btn-sm" type="button" data-bs-toggle="tooltip"
                                     data-bs-title="اتصال">
                                     <i class="fa-solid fa-phone"></i>
                                 </a>
@@ -91,18 +153,15 @@
                         </div>
 
                         <div class="hero-visual">
-                            <div class="ring r1"></div>
-                            <div class="ring r2"></div>
-                            <div class="ring r3"></div>
 
                             <img class="hero-img"
-                                src="{% static "core/img/doctors.jpg" %}"
+                                src="{% static "core/img/new-logo.png" %}"
                                 alt="Teb Sahar" />
 
                             <div class="floating-card fc1">
                                 <div class="fc-icon"><i class="fa-solid fa-baby"></i></div>
                                 <div>
-                                    <div class="fw-semibold">برامج IVF/ICSI</div>
+                                    <div class="fw-semibold">برامج اطفال انابیب</div>
                                     <div class="small text-muted">خطط علاج شخصية</div>
                                 </div>
                             </div>
@@ -110,7 +169,7 @@
                             <div class="floating-card fc2">
                                 <div class="fc-icon"><i class="fa-solid fa-microscope"></i></div>
                                 <div>
-                                    <div class="fw-semibold">مختبر جنيني</div>
+                                    <div class="fw-semibold">زرع الکلی</div>
                                     <div class="small text-muted">تقنيات دقيقة</div>
                                 </div>
                             </div>
@@ -172,95 +231,95 @@
                         <div class="card-icon">
                             <i class="fa-solid fa-egg"></i>
                         </div>
-                        <h5 class="fw-bold mt-3">متابعة الحمل والولادة</h5>
+                        <h5 class="fw-bold mt-3">الجراحات الطبية المتقدمة</h5>
                         <p class="text-muted">
-                        رعاية طبية متكاملة للأم والجنين من بداية الحمل حتى الولادة.
+                            إجراء عمليات جراحية متخصصة بأحدث التقنيات وعلى يد أطباء ذوي خبرة عالية.
+                                                    </p>
+                                                    <div class="chips">
+                                                        <span class="chip">Surgery</span><span class="chip">Hospital</span><span class="chip">Care</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                                                <div class="glass-card service-card h-100">
+                                                    <div class="card-icon">
+                                                        <i class="fa-solid fa-person-pregnant"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold mt-3">زراعة الأجنة وعلاج العقم</h5>
+                                                    <p class="text-muted">
+                            خدمات متطورة لزراعة الأجنة وعلاج مشاكل العقم وفق المعايير الطبية العالمية.
+                                                    </p>
+                                                    <div class="chips">
+                                                        <span class="chip">IVF</span><span class="chip">Fertility</span><span
+                                                            class="chip">Embryo</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
+                                                <div class="glass-card service-card h-100">
+                                                    <div class="card-icon">
+                                                        <i class="fa-solid fa-dna"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold mt-3"> التجميل والعناية الجمالية</h5>
+                                                    <p class="text-muted">
+                            عمليات تجميلية وعلاجات جمالية لتحسين المظهر بثقة وأمان طبي كامل.
+
+                                                    </p>
+                                                    <div class="chips">
+                                                        <span class="chip">Beauty</span><span class="chip">Cosmetic</span><span
+                                                            class="chip">Aesthetic</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                                                <div class="glass-card service-card h-100">
+                                                    <div class="card-icon">
+                                                        <i class="fa-solid fa-vial-circle-check"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold mt-3">التصوير الطبي والتشخيص</h5>
+                                                    <p class="text-muted">
+                            خدمات التصوير الطبي بما في ذلك السونار والأشعة لتشخيص دقيق وسريع.
+
+                                                    </p>
+                                                    <div class="chips">
+                                                        <span class="chip">Ultrasound</span><span class="chip">Imaging</span><span class="chip">Diagnosis</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                                                <div class="glass-card service-card h-100">
+                                                    <div class="card-icon">
+                                                        <i class="fa-solid fa-user-doctor"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold mt-3"> العلاج والتأهيل الطبي</h5>
+                                                    <p class="text-muted">
+                            برامج علاجية وتأهيلية مخصصة لاستعادة الصحة وتحسين جودة الحياة.
+
+                                                    </p>
+                                                    <div class="chips">
+                                                        <span class="chip">Therapy</span><span class="chip">Rehab</span><span
+                                                            class="chip">Health</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
+                                                <div class="glass-card service-card h-100">
+                                                    <div class="card-icon">
+                                                        <i class="fa-solid fa-heart-circle-plus"></i>
+                                                    </div>
+                                                    <h5 class="fw-bold mt-3">الرعاية الطبية الشاملة</h5>
+                                                    <p class="text-muted">
+                            خدمات طبية متكاملة تشمل الفحص والعلاج والمتابعة للمرضى الدوليين.
+
                         </p>
                         <div class="chips">
-                            <span class="chip">PregnancyCare</span><span class="chip">PrenatalCare</span><span class="chip">Childbirth</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
-                    <div class="glass-card service-card h-100">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-person-pregnant"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3">الخصوبة وعلاجات الإنجاب</h5>
-                        <p class="text-muted">
-                        تشخيص وعلاج تأخر الحمل وزراعة الأجنة بأحدث الأساليب الطبية.
-                        </p>
-                        <div class="chips">
-                            <span class="chip">Fertility</span><span class="chip">IVF</span><span
-                                class="chip">EmbryoTransfer</span><span class="chip">ReproductiveHealth</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
-                    <div class="glass-card service-card h-100">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-dna"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3"> التصوير الطبي (سونار)</h5>
-                        <p class="text-muted">
-                            فحوصات سونار دقيقة لتشخيص ومتابعة الحالات النسائية والحمل.
-
-                        </p>
-                        <div class="chips">
-                            <span class="chip">Ultrasound</span><span class="chip">MedicalImaging</span><span
-                                class="chip">DiagnosticImaging</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <div class="glass-card service-card h-100">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-vial-circle-check"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3">التحاليل الطبية</h5>
-                        <p class="text-muted">
-                            تحاليل مخبرية شاملة ودقيقة لدعم التشخيص والمتابعة العلاجية.
-
-                        </p>
-                        <div class="chips">
-                            <span class="chip">LaboratoryTests</span><span class="chip">MedicalLab</span><span class="chip">BloodTest</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
-                    <div class="glass-card service-card h-100">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-user-doctor"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3"> الرعاية الصحية الشاملة</h5>
-                        <p class="text-muted">
-                                خدمات طبية متكاملة بخطط علاجية مخصصة لكل مريضة.
-
-                        </p>
-                        <div class="chips">
-                            <span class="chip">Healthcare</span><span class="chip">MedicalCare</span><span
-                                class="chip">PatientCare</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="140">
-                    <div class="glass-card service-card h-100">
-                        <div class="card-icon">
-                            <i class="fa-solid fa-heart-circle-plus"></i>
-                        </div>
-                        <h5 class="fw-bold mt-3">التجميل الطبي النسائي</h5>
-                        <p class="text-muted">
-                                علاجات تجميلية آمنة لتحسين الصحة والمظهر النسائي.
-
-                        </p>
-                        <div class="chips">
-                            <span class="chip">MedicalAesthetics</span><span class="chip">WomenAesthetics</span><span
-                                class="chip">CosmeticCare</span>
+                            <span class="chip">Medical</span><span class="chip">Healthcare</span><span
+                                class="chip">Treatment</span>
                         </div>
                     </div>
                 </div>
@@ -346,7 +405,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- DOCTORS -->
     <section id="doctors" class="section-pad">
@@ -700,6 +758,9 @@
 {% endblock content  %}
 
 {% block extra_scripts %}
+    <script type="text/javascript">
+        !function(){var i="ARAs5e",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+    </script>
     <script>
         jQuery('document').ready(function(){
             jQuery("#appointmentForm").click(function(){
