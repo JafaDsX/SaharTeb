@@ -36,9 +36,9 @@
 
             <div class="filter-tags d-flex justify-content-center flex-wrap">
                 <a href='#' class="btn-filter active" data-filter="all">جميع المواضيع</a>
-                {% for category in blog_categories %}
+                {% comment %} {% for category in blog_categories %}
                     <a href='#' class="btn-filter" data-filter="tech">{{ category }}</a>
-                {% endfor %}
+                {% endfor %} {% endcomment %}
             </div>
         </div>
     </header>
