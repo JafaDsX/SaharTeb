@@ -18,17 +18,17 @@ class ServiceRequestForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(attrs={
                 "class": "form-control",
-                "placeholder": "نام و نام خانوادگی",
+                "placeholder": "الاسم الكامل",
                 'name': 'name'
             }),
             "phone": forms.TextInput(attrs={
                 "class": "form-control",
-                "placeholder": "شماره تماس",
+                "placeholder": "009",
                 'name':'phone'
             }),
             "service": forms.TextInput(attrs={
                 "class": "form-control",
-                "placeholder": "خدمت مورد نظر",
+                "placeholder": "الخدمة",
                 'name': 'service'
             }),
             "requested_date": forms.DateInput(attrs={

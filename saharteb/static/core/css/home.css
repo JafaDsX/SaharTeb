@@ -271,7 +271,7 @@ a {
 
 .hero-lead {
     color: rgba(255, 255, 255, .78);
-    text-shadow: 1px 1px 1px rgb(45, 45, 45);
+    text-shadow: 1px 1px 1px #beb9b9;
 }
 
 .hero-trust {
@@ -959,4 +959,32 @@ linear-gradient(
 
 background-repeat: no-repeat;
 background-attachment: fixed;
+}
+
+@media (max-width: 1200px){
+    a.nav-link{
+        font-size: 15px !important;
+    }
+    div.header-btn {
+        flex-wrap: nowrap !important;
+        margin-bottom: 15px;
+    }
+    a.header-btn{
+        font-size: 18px;
+    }
+    div.fw-semibold{
+        font-size: 13px !important;
+    }
+    div.hero-card-bottom > div, div.hero-card-bottom > a{
+        width: 50% !important;
+    }
+}
+
+.hero-note{
+    padding-bottom: 10px;
+}
+
+a.btn-soft{
+    margin: 0 !important;
+    padding: 35px 0 ;
 }
