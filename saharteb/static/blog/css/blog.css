@@ -1,0 +1,334 @@
+    /* =========================================
+        Core Variables & Base Styles (From home.min.css context)
+        ========================================= */
+    :root {
+        --bg: #070A12;
+        --card: rgba(255, 255, 255, .05);
+        --card-hover: rgba(255, 255, 255, .08);
+        --stroke: rgba(255, 255, 255, .12);
+        --text: rgba(255, 255, 255, .92);
+        --muted: rgba(255, 255, 255, .60);
+        --primary: #4CC9F0;
+        --primary2: #7C3AED;
+        --rose: #F7A6B9;
+        --radius: 20px;
+        --font-main: 'Vazirmatn', sans-serif;
+    }
+
+    body {
+        background-color: var(--bg);
+        /* Background Patterns */
+        background-image:
+            radial-gradient(1000px 600px at 10% 20%, rgba(76, 201, 240, 0.15), transparent 60%),
+            radial-gradient(800px 600px at 90% 10%, rgba(124, 58, 237, 0.15), transparent 60%);
+        background-attachment: fixed;
+        color: var(--text);
+        font-family: var(--font-main);
+        margin: 0;
+        padding-bottom: 50px;
+        line-height: 1.8;
+        background:
+            radial-gradient(
+            1200px 700px at 70% 10%,
+            rgba(124, 58, 237, 0.20) 0%,
+            rgba(124, 58, 237, 0.10) 35%,
+            rgba(124, 58, 237, 0.04) 65%
+            ),
+            radial-gradient(
+            1000px 700px at 20% 0%,
+            rgba(76, 201, 240, 0.18) 0%,
+            rgba(76, 201, 240, 0.09) 35%,
+            rgba(76, 201, 240, 0.04) 65%
+            ),
+            linear-gradient(
+            180deg,
+            #0b1020 0%,
+            #0e1330 50%,
+            #0b1020 100%
+            );
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        }
+
+    /* Scroll Progress Bar */
+    #reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--rose));
+        z-index: 9999;
+        transition: width 0.1s;
+    }
+
+    /* Glassmorphism Utilities */
+    .glass-panel {
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: var(--radius);
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+    /* =========================================
+        Hero Article Section
+        ========================================= */
+    .article-header {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .article-meta {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(255,255,255,0.05);
+        padding: 8px 20px;
+        border-radius: 50px;
+        border: 1px solid var(--stroke);
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        color: var(--muted);
+    }
+
+    .article-meta i { color: var(--primary); }
+
+    .article-title {
+        font-weight: 900;
+        font-size: 2.5rem;
+        background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
+        line-height: 1.4;
+    }
+
+    .featured-image-container {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--stroke);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        margin-bottom: 50px;
+    }
+
+    .featured-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        transition: transform 10s ease;
+    }
+
+    .featured-image-container:hover .featured-image {
+        transform: scale(1.05);
+    }
+
+    /* =========================================
+        Article Content Styling
+        ========================================= */
+    .content-area {
+        font-size: 1.15rem;
+        color: rgba(255,255,255,0.85);
+    }
+
+    .content-area h2 {
+        color: #fff;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-weight: 800;
+        position: relative;
+        padding-right: 20px;
+    }
+
+    .content-area h2::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 5px;
+        bottom: 5px;
+        width: 4px;
+        background: var(--primary);
+        border-radius: 10px;
+        box-shadow: 0 0 15px var(--primary);
+    }
+
+    .content-area p { margin-bottom: 25px; text-align: justify; }
+
+    .content-area blockquote {
+        background: rgba(124, 58, 237, 0.1);
+        border-right: 3px solid var(--primary2);
+        padding: 30px;
+        border-radius: 12px;
+        font-style: italic;
+        font-size: 1.2rem;
+        margin: 40px 0;
+        color: #fff;
+    }
+
+    /* In-Article Advertisement */
+    .ad-banner {
+        background: repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03) 10px,
+            rgba(255,255,255,0.05) 10px,
+            rgba(255,255,255,0.05) 20px
+        );
+        border: 1px dashed var(--stroke);
+        border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+        margin: 40px 0;
+        position: relative;
+    }
+
+    .ad-label {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.5);
+        padding: 2px 8px;
+        font-size: 0.7rem;
+        border-radius: 4px;
+        color: var(--muted);
+    }
+
+    .ad-content h4 { color: var(--rose); font-weight: 800; }
+    .ad-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 25px;
+        background: var(--primary);
+        color: #000;
+        font-weight: 700;
+        border-radius: 50px;
+        box-shadow: 0 5px 20px rgba(76, 201, 240, 0.4);
+    }
+
+    /* =========================================
+        Sidebar Components
+        ========================================= */
+    .sticky-sidebar {
+        position: sticky;
+        top: 20px;
+    }
+
+    .sidebar-widget {
+        padding: 25px;
+        margin-bottom: 25px;
+    }
+
+    .author-widget {
+        text-align: center;
+    }
+    .author-avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: 3px solid var(--stroke);
+        padding: 3px;
+        margin-bottom: 15px;
+    }
+    .author-avatar img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .toc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-right: 2px solid rgba(255,255,255,0.05);
+    }
+    .toc-list li { margin-bottom: 15px; position: relative; }
+    .toc-list a {
+        color: var(--muted);
+        font-size: 0.95rem;
+        display: block;
+        padding-right: 20px;
+    }
+    .toc-list a:hover, .toc-list a.active {
+        color: var(--primary);
+    }
+    .toc-list a.active::before {
+        content: '';
+        position: absolute;
+        right: -2px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 20px;
+        background: var(--primary);
+        box-shadow: 0 0 10px var(--primary);
+    }
+
+    /* =========================================
+        Services / Products Section (Bottom)
+        ========================================= */
+    .services-section {
+        margin-top: 80px;
+        padding-top: 50px;
+        border-top: 1px solid var(--stroke);
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .section-title i { color: var(--rose); }
+
+    .service-card {
+        background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+        border: 1px solid var(--stroke);
+        border-radius: var(--radius);
+        padding: 25px;
+        transition: 0.3s;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary2);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(124, 58, 237, 0.2);
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        font-size: 1.5rem;
+        color: #d8b4fe;
+        margin-bottom: 20px;
+    }
+
+    .service-price {
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: var(--primary);
+        margin-top: 15px;
+        display: block;
+    }
+
+    /* =========================================
+        Responsive
+        ========================================= */
+    @media (max-width: 991px) {
+        .article-title { font-size: 1.8rem; }
+        .featured-image { height: 300px; }
+        .sticky-sidebar { position: static; margin-bottom: 40px; }
+    }

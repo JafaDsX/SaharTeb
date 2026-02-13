@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}{{ blog.title }}{% endblock title %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static "blog/css/blog.css" %}">
+{% endblock extra_head %}
+
+{% block content %}
+    <!-- Scroll Progress -->
+    <div id="reading-progress"></div>
+
+    <div class="container " style="margin-top: 110px;">
+
+
+        <!-- Article Header -->
+        <header class="article-header">
+            <div class="article-meta glass-panel">
+                <span><i class="far fa-calendar-alt ms-2"></i> {{ blog.created_at|timesince }}</span>
+                <span style="width: 1px; height: 15px; background: var(--stroke);"></span>
+                <span><i class="far fa-clock ms-2"></i> {{ blog.time_to_read }} دقائق قراءة</span>
+                <span style="width: 1px; height: 15px; background: var(--stroke);"></span>
+                <span><i class="fas fa-tag ms-2"></i>{{ blog.main_tag.name }}</span>
+            </div>
+
+            <h1 class="article-title">{{ blog.title }}</h1>
+
+            <div class="featured-image-container">
+                <!-- Replace with your actual image URL -->
+                <img src="{{ blog.img.url }}" alt="AI in Healthcare" class="featured-image">
+                <!-- Gradient Overlay for Image -->
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--bg), transparent);"></div>
+            </div>
+        </header>
+
+        <div class="row g-5 mb-5">
+            <!-- Main Content (Right Side in RTL) -->
+            <div class="col-lg-8">
+                <article class="content-area">
+                    <p class="lead" style="font-size: 1.3rem; color: #fff; font-weight: 500;">
+                        {{ blog.introduction }}
+                    </p>
+
+                    {% for section in blog.sections.all %}
+                        {% if section.title %}
+                            <h2 id="section{{ forloop.counter }}">{{ section.title }}</h2>
+                        {% endif %}
+
+                        <p>
+                            {{ section.text|safe }}
+                        </p>
+
+                        {% if section.blockquote %}
+                            <blockquote>
+                                "{{ section.blockquote }}"
+                            </blockquote>
+                        {% endif %}
+
+
+                    {% endfor %}
+                    <!-- In-Article ADVERTISEMENT -->
+                         <div class="ad-banner">
+                            <span class="ad-label">إعلان</span>
+                            <div class="ad-content">
+                                <h4 style='line-height: 35px;'>إذا كانت لديك أي استفسارات إضافية،
+                                    أو كنت تبحث عن رحلة علاجية مضمونة في إيران
+                                    بجودة عالية وتكلفة مناسبة،
+                                    لا تتردد في التواصل معنا الآن.
+                                </h4>
+                                <a href="https://wa.me/989033817848?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D9%88%D8%AF%D9%91%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC%D9%8A%D8%A9%20%D9%81%D9%8A%20%D8%A5%D9%8A%D8%B1%D8%A7%D9%86." class="ad-btn">جرّب التطبيق مجانًا الآن<i class="fas fa-arrow-left me-2"></i></a>
+                            </div>
+                        </div>
+                </article>
+
+                <!-- Tags & Share Bottom -->
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mt-5 pt-4 border-top border-secondary">
+                    <div class="d-flex gap-2">
+                        {% for tag in blog.tags.all %}
+                            <span class="badge rounded-pill bg-dark border border-secondary p-2">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="d-flex gap-3">
+                        <span>مشاركة:</span>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- =========================
+                    SERVICES SECTION (CTA)
+                    ========================= -->
+                {% comment %} <section class="services-section">
+                    <div class="section-title">
+                        <i class="fas fa-stethoscope"></i>
+                        <span>خدماتنا الطبية المميزة</span>
+                    </div>
+                    <p class=" mb-4">بناءً على اهتمامك بهذا المقال، نقترح عليك خدماتنا المتخصصة:</p>
+
+                    <div class="row g-4">
+                        <!-- Service 1 -->
+                        <div class="col-md-6">
+                            <div class="service-card">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div class="service-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill">الأكثر طلباً</span>
+                                </div>
+                                <h4 class="text-white fw-bold">استشارة أونلاين</h4>
+                                <p class="text-white-50 small">تحدث مع أخصائي الذكاء الاصطناعي الطبي لتحليل بياناتك الصحية.</p>
+                                <span class="service-price">۵۰۰,۰۰۰ تومان</span>
+                                <a href="#" class="btn btn-outline-light btn-sm w-100 mt-3 rounded-pill">حجز موعد</a>
+                            </div>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div class="col-md-6">
+                            <div class="service-card">
+                                <div class="service-icon" style="background: rgba(247, 166, 185, 0.2); color: var(--rose);">
+                                    <i class="fas fa-dna"></i>
+                                </div>
+                                <h4 class="text-white fw-bold">فحص جيني شامل</h4>
+                                <p class="text-white-50 small">تقرير كامل عن الاستعداد الوراثي للأمراض باستخدام AI.</p>
+                                <span class="service-price" style="color: var(--rose);">۱,۲۰۰,۰۰۰ تومان</span>
+                                <a href="#" class="btn btn-outline-light btn-sm w-100 mt-3 rounded-pill">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                </section> {% endcomment %}
+
+                <!-- Comments Placeholder -->
+                <div class="mt-5 glass-panel p-4">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <h4 class="mb-4 text-white">التعليقات</h4>
+
+                        <!-- فیلد نام -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label text-secondary">الاسم</label>
+                                {{ comment_form.name }}
+                        </div>
+
+                        <!-- فیلد ایمیل -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label text-secondary">البريد الإلكتروني</label>
+                                {{ comment_form.email }}
+                        </div>
+
+                        <!-- فیلد محتوا / نظر -->
+                        <div class="mb-3">
+                            <label for="content" class="form-label text-secondary">التعليق</label>
+                                    {{ comment_form.content }}
+                        </div>
+
+                        <!-- دکمه ارسال -->
+                        <button type="submit" class="btn btn-primary rounded-pill px-4">إرسال</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sidebar (Left Side in RTL) -->
+            <div class="col-lg-4 ">
+                <div class="sticky-sidebar">
+
+                    <!-- Author Widget -->
+                    <div class="glass-panel sidebar-widget author-widget">
+                        <div class="author-avatar mx-auto">
+                            {% if blog.author.profile_picture.ur %}
+                                <img src="{{ blog.author.profile_picture.url }}" alt="{{ blog.author.name }}">
+                            {% endif %}
+                                <img src="{% static "blog/img/without-profile.jpg" %}" alt="{{ blog.author.name }}">
+
+                        </div>
+                        <h5 class="fw-bold text-white">{{ blog.author.name }}</h5>
+                        <p class="small">باحث في مجال الطب الرقمي</p>
+                        <button class="btn btn-sm btn-outline-primary rounded-pill w-100">متابعة الكاتب</button>
+                    </div>
+
+                    <!-- Table of Contents -->
+                    <div class="glass-panel sidebar-widget">
+                        <h5 class="fw-bold text-white mb-3 pb-2 border-bottom border-secondary">فهرس المحتوى</h5>
+                        <ul class="toc-list">
+                            {% for section in blog.sections.all %}
+                                {% if  section.title %}
+                                    <li><a href="#section{{ forloop.counter }}" >{{ section.title }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Sidebar Ad -->
+                    <div class="glass-panel sidebar-widget text-center" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(76, 201, 240, 0.1));">
+                        <div class="mb-3">
+                            <i class="fas fa-bolt fa-3x text-warning"></i>
+                        </div>
+                        <h5 class="text-white fw-bold">عرض خاص!</h5>
+                        <p class="text-white-50 small">خصم 10% على جميع الفحوصات الدورية لهذا الشهر.</p>
+                        <a href='https://wa.me/989033817848?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D9%88%D8%AF%D9%91%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A9%20%D9%88%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D8%AC%D9%8A%D8%A9%20%D9%81%D9%8A%20%D8%A5%D9%8A%D8%B1%D8%A7%D9%86.' class="btn btn-light text-dark fw-bold rounded-pill w-100 pulse-anim">احصل عليه الآن</a>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="glass-panel sidebar-widget">
+                        <h5 class="fw-bold text-white mb-3">النشرة البريدية</h5>
+                        <p class="text-white mb-3">اشترك للحصول على آخر التحديثات الطبية.</p>
+                        <div class="input-group">
+                            <input type="email" class="form-control bg-transparent border-secondary text-white" placeholder="البريد الإلكتروني">
+                            <button class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block extra_scripts %}
+    <script src="{% static "blog/js/blog.js" %}"></script>
+{% endblock extra_scripts %}

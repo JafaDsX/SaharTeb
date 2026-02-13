@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
-    'service.apps.ServiceConfig'
-]
+    'service.apps.ServiceConfig',
+    'django_ckeditor_5',
+    'django.contrib.humanize']
 
 MIDDLEWARE = [
     'core.middleware.maintenance.MaintenanceModeMiddleware',
@@ -151,3 +152,5 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
     },
 }
+CKEDITOR_5_UPLOAD_PATH = "uploads/"
+
