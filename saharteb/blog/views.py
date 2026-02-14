@@ -13,7 +13,21 @@ class BlogListView(BlogCategoryMixin, ListView):
     model = Blog
     template_name='blog/blogs.html'
     context_object_name='blogs'
+    paginate_by = 6
 
+
+    def get_queryset(self):
+        qs = super().get_queryset().published()
+
+        category = self.request.GET.get('category')
+        search = self.request.GET.get('search')
+
+        if category:
+            qs = qs.category(category)
+
+        if search:
+            qs = qs.search(search)
+        return qs
 
 class BlogDetailView(DetailView):
     model = Blog
@@ -26,6 +40,8 @@ class BlogDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['comment_form'] = CommentForm()
         return context
+
+
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()

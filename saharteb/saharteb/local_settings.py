@@ -1,9 +1,9 @@
 SECRET_KEY = 'django-insecure-9p8^hx5$q21x-=jwu)ie6e&kc=i_=7^+!@ar3c^03$8wo98@)&'
-DEBUG = True
-ALLOWED_HOSTS = ['saharteb.com', 'www.saharteb.com', '*']
+DEBUG = False
+ALLOWED_HOSTS = ['saharteb.com', 'www.saharteb.com']
 
 
-DB_NAME='sdvilydq_mydb'
+DB_NAME='sdvilydq_mydb.db'
 DB_USER='sdvilydq_saharuser2025'
 PASSWORD='S:DLKFJ()*4oijsodfw234'
 HOST='127.0.0.1'

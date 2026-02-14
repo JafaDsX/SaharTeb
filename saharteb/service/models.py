@@ -15,7 +15,6 @@ class Category(models.Model):
         return self.title
 
 
-
 class Service(models.Model):
     SERVICE_TYPES = (
         (1, 'TRANSLATOR'),
@@ -41,7 +40,6 @@ class Service(models.Model):
         verbose_name_plural='سرویس ها'
 
 
-
 class ServiceProvider(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='providers', verbose_name='کاربر')
     service = models.ForeignKey(Service, on_delete=models.PROTECT, related_name='providers', verbose_name='سرویس')
@@ -56,7 +54,6 @@ class ServiceProvider(models.Model):
     class Meta:
         verbose_name='فراهم کننده سرویس'
         verbose_name_plural='فراهم کنندگان سرویس'
-
 
 
 class ServiceProviderOption(models.Model):

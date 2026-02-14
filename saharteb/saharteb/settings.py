@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
     'service.apps.ServiceConfig',
-    'django_ckeditor_5',
-    'django.contrib.humanize']
+    # 'django_ckeditor_5',
+    'django.contrib.humanize',
+    'ckeditor'
+    ]
 
 MIDDLEWARE = [
     'core.middleware.maintenance.MaintenanceModeMiddleware',
@@ -77,15 +79,8 @@ WSGI_APPLICATION = 'saharteb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': DB_NAME,
-        "USER": DB_USER,
-        "PASSWORD": PASSWORD,
-        "HOST": HOST,
-        "PORT": PORT,
-        "OPTIONS": {
-            "charset": "utf8mb4",
-        },
     }
 }
 
@@ -152,5 +147,4 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
     },
 }
-CKEDITOR_5_UPLOAD_PATH = "uploads/"
 

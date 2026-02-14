@@ -249,3 +249,10 @@ body {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+a{
+    text-decoration: none !important;
+}
+
+input.form-control.glass-input::placeholder {
+    color: #efefef4a;
+}

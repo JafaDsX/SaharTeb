@@ -4,8 +4,10 @@ cffi==2.0.0
 charset-normalizer==3.4.4
 cryptography==46.0.5
 Django==5.2
+django-ckeditor==6.7.3
 django-ckeditor-5==0.2.19
 django-js-asset==3.1.2
+django-markdownx==4.0.9
 idna==3.11
 pillow==12.0.0
 psycopg2-binary==2.9.11
