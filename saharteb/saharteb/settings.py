@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'saharteb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': DB_NAME,
+        'NAME':  BASE_DIR / 'sdvilydq_mydb.sqlite3',
     }
 }
 
