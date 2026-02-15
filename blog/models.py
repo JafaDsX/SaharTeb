@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 from django.db.models import Q
+import unicodedata, os
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=255, verbose_name="نام دسته بندی")
@@ -49,6 +50,11 @@ class BlogQuerySet(models.QuerySet):
             Q(tags__name__icontains=query)
         ).distinct()
 
+def safe_upload_to(instance, filename):
+    base, ext = os.path.splitext(filename)
+    base_normalized = unicodedata.normalize('NFKD', base).encode('ascii', 'ignore').decode('ascii')
+    safe_name = base_normalized.replace(' ', '_')
+    return f"images/{safe_name}{ext}"
 
 class Blog(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.SET_NULL, null=True, blank=True, related_name='blogs', verbose_name="دسته بندی")
@@ -58,8 +64,10 @@ class Blog(models.Model):
     author = models.ForeignKey(BlogAuthor, on_delete=models.SET_NULL, null=True, blank=True, related_name='blogs', verbose_name="نویسنده")
     is_published = models.BooleanField(default=False, verbose_name="منتشر شده")
     time_to_read = models.PositiveIntegerField(null=True, blank=True, verbose_name="زمان تقریبی مطالعه (دقیقه)", default=5)
-    img = models.ImageField(upload_to='blog_images/', blank=True, verbose_name="تصویر اصلی", )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
+
+
+    img = models.ImageField(upload_to=safe_upload_to)
 
     objects = BlogQuerySet.as_manager()
 
