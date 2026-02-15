@@ -16,8 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 from .local_settings import *
-import pymysql
-pymysql.install_as_MySQLdb()
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -124,7 +123,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = '/home/sdvilydq/public_html/media'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
