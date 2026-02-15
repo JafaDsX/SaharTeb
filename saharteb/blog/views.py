@@ -14,6 +14,7 @@ class BlogListView(BlogCategoryMixin, ListView):
     template_name='blog/blogs.html'
     context_object_name='blogs'
     paginate_by = 6
+    
 
 
     def get_queryset(self):
