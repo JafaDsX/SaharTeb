@@ -58,7 +58,7 @@ class Blog(models.Model):
     author = models.ForeignKey(BlogAuthor, on_delete=models.SET_NULL, null=True, blank=True, related_name='blogs', verbose_name="نویسنده")
     is_published = models.BooleanField(default=False, verbose_name="منتشر شده")
     time_to_read = models.PositiveIntegerField(null=True, blank=True, verbose_name="زمان تقریبی مطالعه (دقیقه)", default=5)
-    img = models.ImageField(upload_to='blog_images/', blank=True, verbose_name="تصویر اصلی")
+    img = models.ImageField(upload_to='blog_images/', blank=True, verbose_name="تصویر اصلی", )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
 
     objects = BlogQuerySet.as_manager()

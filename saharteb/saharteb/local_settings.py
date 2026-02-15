@@ -3,7 +3,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['saharteb.com', 'www.saharteb.com']
 
 
-DB_NAME='sdvilydq_mydb.db'
+DB_NAME='sdvilydq_mydb'
 DB_USER='sdvilydq_saharuser2025'
 PASSWORD='S:DLKFJ()*4oijsodfw234'
 HOST='127.0.0.1'

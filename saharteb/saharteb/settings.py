@@ -17,6 +17,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 from .local_settings import *
 
+import pymysql
+pymysql.install_as_MySQLdb()
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -37,7 +40,6 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
     'service.apps.ServiceConfig',
-    # 'django_ckeditor_5',
     'django.contrib.humanize',
     'ckeditor'
     ]
@@ -78,10 +80,18 @@ WSGI_APPLICATION = 'saharteb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':  BASE_DIR / 'sdvilydq_mydb.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':  DB_NAME,
+        'USER': DB_USER,
+        "PASSWORD": PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        },
     }
 }
+
 
 
 # Password validation
@@ -122,8 +132,8 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/home/sdvilydq/public_html/media'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
