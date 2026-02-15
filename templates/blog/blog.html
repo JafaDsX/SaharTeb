@@ -29,9 +29,9 @@
 
             <div class="featured-image-container">
                 <!-- Replace with your actual image URL -->
-                 {% if blog.img %}
+                 {% comment %} {% if blog.img %}
                     <img src="{{ blog.img.url }}" alt="AI in Healthcare" class="featured-image">
-                 {% endif %}
+                 {% endif %} {% endcomment %}
                 <!-- Gradient Overlay for Image -->
                 <div style="position: absolute; inset: 0; background: linear-gradient(to top, var(--bg), transparent);"></div>
             </div>

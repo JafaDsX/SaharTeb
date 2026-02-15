@@ -101,11 +101,11 @@
                             <article class="glass-panel blog-card d-flex flex-column">
                                 <div class="card-img-holder">
                                     <span class="card-badge">{{ blog.main_tag.name }}</span>
-                                    {% if blog.img %}
+                                    {% comment %} {% if blog.img %}
                                         <img src="{{ blog.img.url }}" alt="{{ blog.title }}">
                                     {% else %}
                                         <img src="{% static 'images/default-blog.jpg' %}" alt="{{ blog.title }}">
-                                    {% endif %}
+                                    {% endif %} {% endcomment %}
                                 </div>
                                 <div class="card-body d-flex flex-column flex-grow-1">
                                     <div class="meta-info">
