@@ -1,0 +1,258 @@
+
+:root {
+    --primary: #4CC9F0;
+    --primary-dark: #4361ee;
+    --secondary: #7C3AED;
+    --rose: #F7A6B9;
+    --text: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shine: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    color: var(--text);
+    overflow-x: hidden;
+    /* بک‌گراند درخواستی شما */
+    background:
+        radial-gradient(
+        1200px 700px at 70% 10%,
+        rgba(124, 58, 237, 0.20) 0%,
+        rgba(124, 58, 237, 0.10) 35%,
+        rgba(124, 58, 237, 0.04) 65%
+        ),
+        radial-gradient(
+        1000px 700px at 20% 0%,
+        rgba(76, 201, 240, 0.18) 0%,
+        rgba(76, 201, 240, 0.09) 35%,
+        rgba(76, 201, 240, 0.04) 65%
+        ),
+        linear-gradient(
+        180deg,
+        #0b1020 0%,
+        #0e1330 50%,
+        #0b1020 100%
+        );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* --- یوتیلیتی‌های گلس مورفیسم --- */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.glass-input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+    border-radius: 12px;
+    padding: 12px 20px;
+}
+.glass-input:focus {
+    background: rgba(0, 0, 0, 0.3);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(76, 201, 240, 0.2);
+}
+
+/* --- هدر صفحه --- */
+.blog-header {
+    padding: 60px 0;
+    text-align: center;
+}
+.section-title {
+    font-weight: 800;
+    background: linear-gradient(90deg, #fff, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+/* --- فیلتر تگ‌ها --- */
+.filter-tags .btn-filter {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    border-radius: 50px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+.filter-tags .btn-filter:hover, .filter-tags .btn-filter.active {
+    background: var(--primary); /* استفاده از متغیر هوم */
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(76, 201, 240, 0.4);
+    border-color: var(--primary);
+}
+
+/* --- کارت مقاله ویژه (Featured) --- */
+.featured-card {
+    overflow: hidden;
+    transition: transform 0.3s;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.featured-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%); /* فید شدن عکس */
+}
+.featured-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    background: linear-gradient(to top, #0b1020 10%, transparent);
+}
+
+/* --- کارت‌های گرید وبلاگ --- */
+.blog-card {
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+.blog-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.card-img-holder {
+    height: 220px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 10px;
+    position: relative;
+}
+.card-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.blog-card:hover .card-img-holder img {
+    transform: scale(1.1);
+}
+.card-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(11, 16, 32, 0.7);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.card-body {
+    padding: 15px 25px 25px;
+}
+.meta-info {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.read-more-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-top: auto;
+}
+.read-more-btn:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* --- تبلیغات (Ads) --- */
+.ad-banner-wide {
+    border-radius: 24px;
+    background: linear-gradient(45deg, #240b36, #c31432); /* نمونه گرادینت جذاب */
+    padding: 40px;
+    margin: 60px 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.ad-banner-wide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* background: url('https://www.transparenttextures.com/patterns/cubes.png'); */
+    opacity: 0.1;
+}
+.ad-card-sidebar {
+    background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(124, 58, 237, 0.1));
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- بخش خدمات پایین صفحه --- */
+.services-section {
+    background: rgba(0,0,0,0.3);
+    margin-top: 80px;
+    padding: 60px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.product-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.3s;
+    text-align: center;
+}
+.product-card:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: var(--primary);
+}
+.product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* انیمیشن لودینگ ساده */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease backwards;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+a{
+    text-decoration: none !important;
+}
+
+input.form-control.glass-input::placeholder {
+    color: #efefef4a;
+}

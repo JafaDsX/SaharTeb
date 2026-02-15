@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
-    'service.apps.ServiceConfig'
-]
+    'service.apps.ServiceConfig',
+    # 'django_ckeditor_5',
+    'django.contrib.humanize',
+    'ckeditor'
+    ]
 
 MIDDLEWARE = [
     'core.middleware.maintenance.MaintenanceModeMiddleware',
@@ -76,15 +79,8 @@ WSGI_APPLICATION = 'saharteb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': DB_NAME,
-        "USER": DB_USER,
-        "PASSWORD": PASSWORD,
-        "HOST": HOST,
-        "PORT": PORT,
-        "OPTIONS": {
-            "charset": "utf8mb4",
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':  BASE_DIR / 'sdvilydq_mydb.sqlite3',
     }
 }
 
@@ -151,3 +147,4 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
     },
 }
+

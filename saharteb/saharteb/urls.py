@@ -24,6 +24,7 @@ urlpatterns = [
     path("", include("core.urls")),
     path("blog/", include('blog.urls')),
     path("service/", include('service.urls')),
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
 ]
 
 handler404 = 'core.views.custom_page_not_found_view'
@@ -31,8 +32,8 @@ handler500 = 'core.views.custom_error_view'
 handler403 = 'core.views.custom_permission_denied_view'
 handler400 = 'core.views.custom_bad_request_view'
 
-if not settings.DEBUG:
+if settings.DEBUG:
     urlpatterns += static(
-        settings.STATIC_URL,
-        document_root=settings.STATIC_ROOT
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
     )

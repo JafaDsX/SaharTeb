@@ -7,6 +7,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{% block title %}{% endblock title %}</title>
+    <meta name="google-site-verification" content="WetTazjggBktVmJIe23wbNWbQ6lhkmIicqfi-O-VqEk" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'core/favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'core/favicon/favicon-16x16.png' %}">
@@ -38,6 +40,7 @@
 
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-smooth-scroll="true" tabindex="0">
 
+
     {# ------------  Navbar ------------ #}
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-glass fixed-top">
         <div class="container">
@@ -58,12 +61,12 @@
 
             <div id="nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-2">
-                    <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a  class="nav-link" href="{% url "home" %}">الرئيسية</a></li>
                     <li class="nav-item"><a class="nav-link" href="#services">الخدمات</a></li>
                     <li class="nav-item"><a class="nav-link" href="#journey">مراحل المتابعة</a></li>
                     <li class="nav-item"><a class="nav-link" href="#doctors">الأطباء</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">قصص النجاح</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">مقالات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url "blog_list" %}">منشورات</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
                 </ul>
 
@@ -91,7 +94,7 @@
                         <span class="brand-mark"><i class="fa-solid fa-heart-pulse" ></i></span>
                         <span class="fw-bold fs-5">سحر طب</span>
                     </div>
-                    <p class="text-muted mb-3">
+                    <p class="text-white mb-3">
                         تجربة علاجية راقية — خصوصية، دعم، وتقنيات حديثة في IVF والنساء والولادة.
                     </p>
                     <div class="d-flex gap-2">
@@ -131,7 +134,7 @@
             </div>
 
             <hr class="my-4 opacity-25">
-            <div class="d-flex flex-column flex-md-row justify-content-between gap-2 text-muted small">
+            <div class="d-flex flex-column flex-md-row justify-content-between gap-2 text-white small">
                 <div>© <span id="year"></span> سحرطب — جميع الحقوق محفوظة</div>
                 <div>Made with Bootstrap + jQuery</div>
             </div>

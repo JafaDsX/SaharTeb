@@ -604,7 +604,7 @@ a {
 
 .doc-img {
     width: 100%;
-    height: 210px;
+    height: 365 !important;
     object-fit: cover;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, .12);
@@ -875,6 +875,7 @@ option{
             padding: 10px 0 !important;
         }
     }
+
     body, h1, h2, h3, h4, h5, h6, p, span, div, a {
         font-family: 'Kalameh', sans-serif !important;
 }
@@ -976,7 +977,13 @@ background-attachment: fixed;
         font-size: 13px !important;
     }
     div.hero-card-bottom > div, div.hero-card-bottom > a{
-        width: 50% !important;
+        width: 100% !important;
+    }
+    div.metric{
+        text-align: center;
+    }
+    span.counter{
+        font-size: 20px;
     }
 }
 
