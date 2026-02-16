@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from ckeditor.fields import RichTextField
 from django.db.models import Q
 import unicodedata, os
+import uuid
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=255, verbose_name="نام دسته بندی")
@@ -52,9 +53,18 @@ class BlogQuerySet(models.QuerySet):
 
 def safe_upload_to(instance, filename):
     base, ext = os.path.splitext(filename)
-    base_normalized = unicodedata.normalize('NFKD', base).encode('ascii', 'ignore').decode('ascii')
-    safe_name = base_normalized.replace(' ', '_')
-    return f"images/{safe_name}{ext}"
+
+    base_normalized = unicodedata.normalize('NFKD', base)\
+        .encode('ascii', 'ignore')\
+        .decode('ascii')
+
+    base_normalized = base_normalized.replace(' ', '_')
+
+    if not base_normalized:
+        base_normalized = str(uuid.uuid4())
+
+    return f"images/{base_normalized}{ext.lower()}"
+
 
 class Blog(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.SET_NULL, null=True, blank=True, related_name='blogs', verbose_name="دسته بندی")
